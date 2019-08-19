@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { MultiTranslateHttpLoader } from './multi-translate-http-loader';
+import { GlobComponent } from './glob/glob.component';
 
 const i18NFiles = [
   './assets/i18n/',
@@ -16,6 +17,7 @@ function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
+  // declarations: [GlobComponent],
   imports: [
     TranslateModule.forRoot({
       loader: {
@@ -26,7 +28,8 @@ function HttpLoaderFactory(http: HttpClient) {
     }),
   ],
   exports: [
-    TranslateModule
+    TranslateModule,
+    // GlobComponent
   ]
 })
 export class I18nModule { }

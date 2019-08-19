@@ -14,6 +14,7 @@ import { forkJoin, Observable } from 'rxjs';
 import { MultiTranslateHttpLoader } from './multi-translate-http-loader';
 import { ShareModule } from './share.module';
 import { I18nModule } from './i18n.module';
+import { GlobComponent } from './glob/glob.component';
 
 // AoT requires an exported function for factories
 // export function HttpLoaderFactory(http: HttpClient) {
@@ -32,7 +33,11 @@ import { I18nModule } from './i18n.module';
 @NgModule({
   declarations: [
     AppComponent,
+    // GlobComponent,
     // TestComponent
+  ],
+  exports: [
+    // GlobComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +50,7 @@ import { I18nModule } from './i18n.module';
     //     }
     // }),
     I18nModule,
+    ShareModule,
     AppRoutingModule
   ],
   providers: [],

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MultiTranslateHttpLoader } from './multi-translate-http-loader';
+import { GlobComponent } from './glob/glob.component';
 
 function HttpLoaderFactory(http: HttpClient) {
   return new MultiTranslateHttpLoader(http, [
@@ -12,12 +13,12 @@ function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [],
+  declarations: [GlobComponent],
   imports: [
     CommonModule
   ],
   exports: [
-    TranslateModule
+    GlobComponent
   ]
 })
 export class ShareModule { }
