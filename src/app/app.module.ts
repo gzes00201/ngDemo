@@ -15,20 +15,7 @@ import { MultiTranslateHttpLoader } from './multi-translate-http-loader';
 import { ShareModule } from './share.module';
 import { I18nModule } from './i18n.module';
 import { GlobComponent } from './glob/glob.component';
-
-// AoT requires an exported function for factories
-// export function HttpLoaderFactory(http: HttpClient) {
-//   return new MultiTranslateHttpLoader(http, [
-//       {prefix: './assets/i18n/', suffix: '.json'},
-//       {prefix: './assets/i18n/game/', suffix: '.json'},
-//   ]);
-// }
-
-// AoT requires an exported function for factories
-// 建立TranslateHttpLoader作為語系檔的讀取器
-// export function HttpLoaderFactory(http: HttpClient) {
-//   return new TranslateHttpLoader(http);
-// }
+import { I18nLorder } from './i18nLorder';
 
 @NgModule({
   declarations: [
@@ -42,14 +29,8 @@ import { GlobComponent } from './glob/glob.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    // TranslateModule.forRoot({
-    //     loader: {
-    //         provide: TranslateLoader,
-    //         useFactory: HttpLoaderFactory,
-    //         deps: [HttpClient]
-    //     }
-    // }),
-    I18nModule,
+    TranslateModule.forRoot(I18nLorder),
+    // I18nModule,
     ShareModule,
     AppRoutingModule
   ],

@@ -6,6 +6,7 @@ import { TestComponent } from './test.component';
 import { HomeComponent } from './home/home.component';
 import { GlobComponent } from '../glob/glob.component';
 import { ShareModule } from '../share.module';
+import { I18nModule } from '../i18n.module';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { ShareModule } from '../share.module';
   imports: [
     CommonModule,
     ShareModule,
+    I18nModule,
     TestRoutingModule
   ]
 })
