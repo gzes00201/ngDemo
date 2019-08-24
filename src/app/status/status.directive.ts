@@ -1,7 +1,7 @@
 import { Directive, ViewContainerRef } from '@angular/core';
 
 @Directive({
-  selector: '[appStatus]'
+  selector: '[appStatusHost]'
 })
 export class StatusDirective {
   constructor(public viewContainerRef: ViewContainerRef) { }
